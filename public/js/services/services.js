@@ -1,7 +1,7 @@
 'use strict';
 angular.module('ngDay2App')
 	.factory('PostsSvc', function($resource) {
-		return $resource('api/collections/shoppingCart',
+		return $resource('api/collections/demotiy',
 			{},
 			{
 				query: { method: 'GET', isArray: true },
