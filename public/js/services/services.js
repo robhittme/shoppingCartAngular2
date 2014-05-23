@@ -21,7 +21,6 @@ angular.module('ngDay2App')
 			)
 	});
 
-angular.module('shoppingCart20App')
 	.factory('AddService', function($resource){
 		return $resource('http://tiy-fee-rest.herokuapp.com/collections/robhittmeCart', {},
 			{
