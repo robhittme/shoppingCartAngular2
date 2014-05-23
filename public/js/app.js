@@ -28,20 +28,6 @@ angular
         templateUrl: 'views/blog-editDetail.html',
         controller: 'PostCtrl'
       })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
-
-angular
-  .module('shoppingCart20App', [
-    'ngCookies',
-    'ngResource',
-    'ngSanitize',
-    'ngRoute'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
       .when('/Cart', {
         templateUrl: 'views/cart.html',
         controller: 'ProductsCtrl'
@@ -55,6 +41,7 @@ angular
         controller: 'ProductsCtrl'
       })
       .otherwise({
-        redirectTo: '/Home'
+        redirectTo: '/'
       });
   });
+
