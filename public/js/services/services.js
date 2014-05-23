@@ -19,7 +19,7 @@ angular.module('ngDay2App')
 				delete: { method: 'DELETE'}
 			}
 			)
-	});
+	})
 
 	.factory('AddService', function($resource){
 		return $resource('http://tiy-fee-rest.herokuapp.com/collections/robhittmeCart', {},
