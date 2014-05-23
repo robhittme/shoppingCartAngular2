@@ -33,7 +33,7 @@ angular
         controller: 'ProductsCtrl'
       })
       .when('/Shop', {
-        templateUrl: 'views/cart.html',
+        templateUrl: 'views/products.html',
         controller:'ProductsCtrl'
       })
       .when('/Admin', {
