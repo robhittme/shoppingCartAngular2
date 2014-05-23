@@ -42,9 +42,13 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/Home', {
+      .when('/Cart', {
         templateUrl: 'views/cart.html',
         controller: 'ProductsCtrl'
+      })
+      .when('/Shop', {
+        templateUrl: 'views/cart.html',
+        controller:'ProductsCtrl'
       })
       .when('/Admin', {
         templateUrl: 'views/Admin.html',

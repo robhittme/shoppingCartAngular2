@@ -25,7 +25,7 @@
 
 		$scope.delete = function() {
 			PostService.deleteProduct({ id: $routeParams.id });
-			$location.path('/Home');
+			// $location.path('/Home');
 		};
 		// editing
 		// deleting
