@@ -1,0 +1,53 @@
+<div ng-controller= "ProductsCtrl">
+  <div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li><a ng-href="#/Home">Home</a></li>
+    <li><a ng-href="#/newPage">About</a></li>
+    <li><a ng-href="#/Admin">Admin</a></li>
+    <li><a ng-href="#/blog">Blog</a></li>
+
+  </ul>
+    <h3 class="text-muted">shoppingCart</h3>
+  </div>
+
+  <div class="jumbotron">
+    <div class="newProductContainer">
+      <form action="">
+      image url:<br><input type="text" ng-model="newProduct.image"><br>
+      name:<br><input type="text" ng-model="newProduct.name"><br>
+      description:<br><textarea class="form" rows="3" ng-model="newProduct.description"></textarea><br>
+
+      price:<br><input type="text" ng-model="newProduct.price"><br>
+      quantity:<br><input type="text" ng-model="newProduct.quantity"><br>
+
+      <button ng-click="createProduct(newProduct); newProduct=''">add Product</button>
+    </form>
+    <!-- <article ng-repeat="product in Products">
+  
+    <h2>{{product.name}}</h2>
+    <p>{{product.description}}</p>
+  <hr>
+</article> -->
+
+    </div>
+    <div class="shoppingCartProducts">
+      <ul class="cartItems" ng-repeat="product in products">
+        <li><img ng-src="{{product.image}}"></li>
+        <li>name:{{product.name}}</li>
+        <li>description:{{product.description}}</li>
+        <li>price:{{product.price | currency}}</li>
+        <li>quantity:{{product.quantity | number}}</li>
+        <li>review:{{product.review}}
+          <input type="text" ng-model= "newProduct.review">
+          <button ng-click="addReview(newProduct.review)">Add Review</button>
+          <div ng-controller="UDCtrl">
+          <span class="glyphicon glyphicon-trash" ng-click="delete()"></span>
+          <button ng-click="updateProduct">UpdateProduct</button>
+        </div>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+

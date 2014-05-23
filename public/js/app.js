@@ -32,3 +32,25 @@ angular
         redirectTo: '/'
       });
   });
+
+angular
+  .module('shoppingCart20App', [
+    'ngCookies',
+    'ngResource',
+    'ngSanitize',
+    'ngRoute'
+  ])
+  .config(function ($routeProvider) {
+    $routeProvider
+      .when('/Home', {
+        templateUrl: 'views/cart.html',
+        controller: 'ProductsCtrl'
+      })
+      .when('/Admin', {
+        templateUrl: 'views/Admin.html',
+        controller: 'ProductsCtrl'
+      })
+      .otherwise({
+        redirectTo: '/Home'
+      });
+  });
