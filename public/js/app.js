@@ -41,7 +41,7 @@ angular
         controller: 'ProductsCtrl'
       })
       .when('/Cart/:id', {
-        templateUrl: 'views/cart-detail.html'
+        templateUrl: 'views/cart-detail.html',
         controller: 'UDCtrl'
       })
       .when('/Cart/:id/edit', {
