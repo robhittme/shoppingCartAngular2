@@ -35,7 +35,7 @@ angular.module('ngDay2App')
 	})
 
 	.factory('PostService', function($resource) {
-		return $resource('api/collections/admin/:id', {},
+		return $resource('api/collections/admin/:id',
 			{
 				id: '@_id'
 			}, 
