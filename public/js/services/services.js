@@ -44,4 +44,30 @@ angular.module('ngDay2App')
 				updateProduct: { method: 'PUT'	},
 				delete: { method: 'DELETE' }
 			})
+	})
+
+	.factory('AddService', function($resource) {
+		return $resource('api/collections/shoppingCart', {},
+			{
+				getAllCartItems: {
+					method: 'GET',
+					isArray: true
+				},
+				createNewCartItem: {
+					method: 'POST'
+				}
+			});
+	})
+
+
+	.factory('CartService', function($resource) {
+		return $resource('api/collections/shoppingCart/:id',
+			{
+				id: '@_id'
+			}, 
+			{
+				showCartItem: { method: 'GET'	},
+				updateCartItem: { method: 'PUT'	},
+				deleteCartItem: { method: 'DELETE' }
+			})
 	});
