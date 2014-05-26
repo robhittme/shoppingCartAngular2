@@ -45,5 +45,5 @@ angular.module('ngDay2App')
 			deleteProduct: { method: 'DELETE' }
 
 
-		});
+		})
 	});

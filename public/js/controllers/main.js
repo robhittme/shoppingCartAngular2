@@ -41,7 +41,20 @@ angular.module('ngDay2App')
       };
 
   }])
-  .controller('UDCtrl', ['$scope', '$routeParams', '$location', 'PostService', function($scope, $routeParams, $location, PostService) {
+  .controller('PostCtrl', function($scope, $location, $routeParams, PostSvc) {
+
+    $scope.post = PostSvc.show({ id: $routeParams.id });
+    $scope.delete = function() { 
+      PostSvc.delete({ id: $routeParams.id });
+      $location.path('/blog');
+    };
+    $scope.edit = function() {
+      PostSvc.edit($scope.post);
+      $location.path('/blog');
+    };
+
+  })
+  .controller('UDCtrl', function($scope, $location, $routeParams, PostService) {
     
     $scope.product = PostService.showProduct({ id: $routeParams.id });
 
