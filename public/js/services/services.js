@@ -42,7 +42,7 @@ angular.module('ngDay2App')
 			{
 				showProduct: { method: 'GET'	},
 				updateProduct: { method: 'PUT'	},
-				deleteProduct: { method: 'DELETE' }
+				delete: { method: 'DELETE' }
 			}
 			)
 	});
