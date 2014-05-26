@@ -8,6 +8,7 @@ angular.module('ngDay2App')
 				create: { method: 'POST'}
 			});
 	})
+
 	.factory('PostSvc', function($resource) {
 		return $resource('api/collections/demotiy/:id',
 			{
@@ -17,8 +18,7 @@ angular.module('ngDay2App')
 				show: { method: 'GET'},
 				edit: { method: 'PUT'},
 				delete: { method: 'DELETE'}
-			}
-			)
+			})
 	})
 
 	.factory('AddService', function($resource) {
@@ -43,6 +43,5 @@ angular.module('ngDay2App')
 				showProduct: { method: 'GET'	},
 				updateProduct: { method: 'PUT'	},
 				delete: { method: 'DELETE' }
-			}
-			)
+			})
 	});
