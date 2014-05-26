@@ -35,14 +35,14 @@ angular.module('ngDay2App')
 	})
 
 	.factory('PostService', function($resource) {
-		return $resource('api/collections/admin/:id', 
-		{
-			id: '@_id'
-		}, 
-		{
-			showProduct: { method: 'GET'	},
-			updateProduct: { method: 'PUT'	},
-			deleteProduct: { method: 'DELETE' }
-		}
-		);
+		return $resource('api/collections/admin/:id', {},
+			{
+				id: '@_id'
+			}, 
+			{
+				showProduct: { method: 'GET'	},
+				updateProduct: { method: 'PUT'	},
+				deleteProduct: { method: 'DELETE' }
+			}
+			)
 	});
