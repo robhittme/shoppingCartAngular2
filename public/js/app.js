@@ -45,7 +45,7 @@ angular
         controller: 'UDCtrl'
       })
       .when('/Cart/:id/edit', {
-        templateUrl: 'views/blog-editDetail.html',
+        templateUrl: 'views/cart-editDetail.html',
         controller: 'UDCtrl'
       })
       .otherwise({
