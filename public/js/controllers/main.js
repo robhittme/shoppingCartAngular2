@@ -51,7 +51,7 @@ angular.module('ngDay2App')
     };
 
     $scope.delete = function() {
-      PostService.deleteProduct({ id: $routeParams.id });
+      PostService.delete({ id: $routeParams.id });
       $location.path('/Admin');
     };
     // editing
