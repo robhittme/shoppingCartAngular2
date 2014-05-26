@@ -16,25 +16,30 @@
   <h1>Angular is confusing</h1>
   <p>But so Powerfull</p>
 </div>
-
-  <div class="col-md-6">
+<section data-ng-repeat= "product in products">
     <h3>Shopping Cart</h3>
     <div class="customerShoppingCart">
-     <ul class="cartItems nav nav-tabs pull-right" ng-repeat="product in products">
+     <ul class="cartItems nav nav-tabs" ng-repeat="product in products">
         <li><img ng-src="{{product.image}}"></li>
 
         <li>name:{{product.name}}</li>
         <li>price:{{product.price | currency}}</li>
         <li>Pictures</li>
         
-        <li>description</li>
+        <li ng-class="{active: panel.isSelected(0)}"> 
+            <a href ng-click="panel.selectTab(0)">Description</a> 
+          </li>
         <div ng-controller="UDCtrl">
           <span class="glyphicon glyphicon-trash" ng-click="delete()"></span>
         </div>
+        <div class="panel" ng-show="panel.isSelected(0)">
+          <h4>Description </h4>
+          <p>{{product.description}}</p>
+        </div>
       </ul>
     </div>
+</section>
 
-</div>
 
 
 

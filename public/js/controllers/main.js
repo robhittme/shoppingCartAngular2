@@ -45,10 +45,10 @@ angular.module('ngDay2App')
     
     $scope.product = PostService.showProduct({ id: $routeParams.id });
 
-    $scope.updateProduct = function() {
-      PostService.updateProduct($scope.product);
-      $location.path('/Home/' + $routeParams.id);
-    };
+    // $scope.updateProduct = function() {
+    //   PostService.updateProduct($scope.product);
+    //   $location.path('/Home/' + $routeParams.id);
+    // };
 
     $scope.delete = function() {
       PostService.delete({ id: $routeParams.id });
