@@ -41,25 +41,15 @@ angular.module('ngDay2App')
       };
 
   }])
-  .controller("PanelCtrl", function() {
-  this.tab = 0;
 
-  this.selectTab = function(setTab) {
-    this.tab = setTab;
-  };
-  this.isSelected = function(checkTab) {
-    return this.tab === checkTab;
-  };
-  })
-  
   .controller('UDCtrl', ['$scope', '$routeParams', '$location', 'PostService', function($scope, $routeParams, $location, PostService) {
     
     $scope.product = PostService.showProduct({ id: $routeParams.id });
 
-    // $scope.updateProduct = function() {
-    //   PostService.updateProduct($scope.product);
-    //   $location.path('/Home/' + $routeParams.id);
-    // };
+    $scope.updateProduct = function() {
+      PostService.updateProduct($scope.product);
+      $location.path('/Home/' + $routeParams.id);
+    };
 
     $scope.delete = function() {
       PostService.delete({ id: $routeParams.id });
