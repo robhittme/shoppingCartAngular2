@@ -18,10 +18,6 @@
         <li>price:{{product.price | currency}}</li>
         <li>quantity:
           <input type="text" ng-model= "newProduct.quantity"><button ng-click="addQuantity(newProduct.quantity)">quantity</button></li>
-        <li>review:{{product.review}}
-          <input type="text" ng-model= "newProduct.review">
-          <button ng-click="addReview(newProduct.review)">Add Review</button>
-        </li>
         <li><button ng-click="addProductToCart(newProduct)">Add to Cart</button></li>
       </ul>
     </div>

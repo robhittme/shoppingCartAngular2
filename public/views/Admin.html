@@ -36,9 +36,7 @@
         <li>description:{{product.description}}</li>
         <li>price:{{product.price | currency}}</li>
         <li>quantity:{{product.quantity | number}}</li>
-        <li>review:{{product.review}}
-          <input type="text" ng-model= "newProduct.review">
-          <button ng-click="addReview(newProduct.review)">Add Review</button>
+        <li>
           <div ng-controller="UDCtrl">
           <span class="glyphicon glyphicon-trash" ng-click="delete()"></span>
           <button ng-click="updateProduct">UpdateProduct</button>
