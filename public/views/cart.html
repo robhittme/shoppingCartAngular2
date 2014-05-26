@@ -14,7 +14,82 @@
 
 
 <h3>Shopping Cart</h3>
-<section data-ng-repeat= "product in products">
+<section class="productSection" data-ng-repeat="product in products">
+  <h3>
+    {{product.title}}
+    <em class="pull-right"> {{product.price | currency}} </em>
+  </h3>
+
+  <img ng-src="{{product.pic1}}"></img>
+
+  <section ng-controller="PanelController as panel">
+    <button class="btn btn-sm btn-warning pull-right adminBtn"><a href="#/product/{{product._id}}">Edit Product</a></button>
+        <ul class="nav nav-tabs">
+          <li ng-class="{active: panel.isSelected(0)}"> 
+            <a href ng-click="panel.selectTab(0)">Description</a> 
+          </li>
+          <li ng-class="{active: panel.isSelected(1)}"> 
+            <a href ng-click="panel.selectTab(1)">Photo 2</a> 
+          </li>
+          <li ng-class="{active: panel.isSelected(2)}"> 
+            <a href ng-click="panel.selectTab(2)">Photo 3</a> 
+          </li>
+          <li ng-class="{active: panel.isSelected(3)}"> 
+            <a href ng-click="panel.selectTab(3)">Reviews</a> 
+          </li>
+        </ul>
+        <div class="panel" ng-show="panel.isSelected(0)">
+          <h4>Description </h4>
+          <p>{{product.description}}</p>
+        </div>
+        <div class="panel" ng-show="panel.isSelected(1)">
+          <img ng-src="{{product.pic2}}"></img>
+        </div>
+        <div class="panel" ng-show="panel.isSelected(2)">
+          <img ng-src="{{product.pic3}}"></img>
+        </div>
+        <div class="panel" ng-show="panel.isSelected(3)">
+          <h4>Reviews </h4>
+          <blockquote ng-repeat="review in product.reviews">
+            <b>Stars: {{review.stars}}</b>
+            <br>
+            {{review.body}}
+            <br>
+            <cite>by: {{review.author}}</cite>
+          </blockquote>
+          <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(product)">
+            <blockquote>
+              <b>Stars: {{reviewCtrl.review.stars}}</b>
+              <br>
+              {{reviewCtrl.review.body}}
+              <br>
+              <cite>by: {{reviewCtrl.review.author}}</cite>
+            </blockquote>
+            <select ng-model="reviewCtrl.review.stars">
+              <option value="1">1 star</option>
+              <option value="2">2 star</option>
+              <option value="3">3 star</option>
+              <option value="4">4 star</option>
+              <option value="5">5 star</option>
+            </select>
+            <br>
+            <textarea ng-model="reviewCtrl.review.body" cols="50" rows="3"></textarea>
+            <br>
+            <label>by:</label>
+            <input ng-model="reviewCtrl.review.author" type="email" />
+            <input type="submit" value="Submit" />  
+          </form>
+        </div>
+      </section>
+      <div>
+        <p>Quantity</p>
+        <input type="number" ng-model="product.quantity">
+        <button ng-click="addItem(product)" class="btn btn-sm btn-success">Add to Cart</button>
+      </div>
+
+</section>
+
+<!-- <section data-ng-repeat= "product in products">
   <div class="customerShoppingCart">
    <ul class="cartItems nav-tabs">
       <li><img ng-src="{{product.image}}"></li>
@@ -24,10 +99,10 @@
       <section ng-controller="PanelCtrl">
         <li ng-class="{active: panel.isSelected(0)}"> 
           <a href ng-click="panel.selectTab(0)">Description</a> 
-        </li>
+        </li> -->
         <!-- <div ng-controller="UDCtrl">
           <span class="glyphicon glyphicon-trash" ng-click="delete()"></span>
-        </div> -->
+        </div>
         <div class="panel" ng-show="panel.isSelected(0)">
           <h4>Description </h4>
           <p>{{product.description}}</p>
@@ -35,7 +110,7 @@
     </section>
     </ul>
   </div>
-</section>
+</section> -->
 
 
 
