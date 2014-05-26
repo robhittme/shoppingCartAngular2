@@ -22,7 +22,7 @@ angular.module('ngDay2App')
 	})
 
 	.factory('AddService', function($resource){
-		return $resource('http://tiy-fee-rest.herokuapp.com/collections/robhittmeCart', {},
+		return $resource('api/collections/admin', {},
 			{
 				getAllProducts: {
 					method: 'GET',
@@ -35,7 +35,7 @@ angular.module('ngDay2App')
 	})
 
 	.factory('PostService', function($resource) {
-		return $resource('http://tiy-fee-rest.herokuapp.com/collections/robhittmeCart/:id', 
+		return $resource('api/collections/admin/:id', 
 		{
 			id: '@_id'
 		}, 
