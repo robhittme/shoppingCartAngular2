@@ -21,7 +21,7 @@ angular.module('ngDay2App')
 			)
 	})
 
-	.factory('AddService', function($resource){
+	.factory('AddService', function($resource) {
 		return $resource('api/collections/admin', {},
 			{
 				getAllProducts: {
@@ -43,7 +43,6 @@ angular.module('ngDay2App')
 			showProduct: { method: 'GET'	},
 			updateProduct: { method: 'PUT'	},
 			deleteProduct: { method: 'DELETE' }
-
-
-		})
+		}
+		);
 	});

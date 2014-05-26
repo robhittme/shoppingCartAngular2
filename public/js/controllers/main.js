@@ -41,24 +41,22 @@ angular.module('ngDay2App')
       };
 
   }])
-  
-  .controller('UDCtrl', function($scope, $location, $routeParams, PostService) {
+  .controller('UDCtrl', ['$scope', '$routeParams', '$location', 'PostService', function($scope, $routeParams, $location, PostService) {
     
     $scope.product = PostService.showProduct({ id: $routeParams.id });
-    $scope.delete = function() 
-    {
-      PostService.deleteProduct({ id: $routeParams.id });
-      // $location.path('/Home');
-    };
+
     $scope.updateProduct = function() {
       PostService.updateProduct($scope.product);
       $location.path('/Home/' + $routeParams.id);
     };
 
-    
+    $scope.delete = function() {
+      PostService.deleteProduct({ id: $routeParams.id });
+      // $location.path('/Home');
+    };
     // editing
     // deleting
     // showing
 
-  });
+  }]);
 
