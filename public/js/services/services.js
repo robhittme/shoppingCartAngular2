@@ -22,7 +22,7 @@ angular.module('ngDay2App')
 	})
 
 	.factory('AddService', function($resource){
-		return $resource('api/collections/admin', {},
+		return $resource('api/collection/admin', {},
 			{
 				getAllProducts: {
 					method: 'GET',
@@ -35,7 +35,7 @@ angular.module('ngDay2App')
 	})
 
 	.factory('PostService', function($resource) {
-		return $resource('api/collections/admin/:id', 
+		return $resource('api/collection/admin/:id', 
 		{
 			id: '@_id'
 		}, 
