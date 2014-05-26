@@ -50,7 +50,7 @@ angular.module('ngDay2App')
       $location.path('/Home/' + $routeParams.id);
     };
 
-    $scope.deleteProduct = function() {
+    $scope.delete = function() {
       PostService.deleteProduct({ id: $routeParams.id });
       // $location.path('/Home');
     };
