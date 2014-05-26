@@ -45,8 +45,7 @@ angular.module('ngDay2App')
   .controller('UDCtrl', function($scope, $location, $routeParams, PostService) {
     
     $scope.product = PostService.showProduct({ id: $routeParams.id });
-    $scope.delete = function(); 
-    console.log("its working");
+    $scope.delete = function() 
     {
       PostService.deleteProduct({ id: $routeParams.id });
       // $location.path('/Home');
