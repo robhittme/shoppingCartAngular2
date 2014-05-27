@@ -6,7 +6,7 @@ angular
     'ngResource',
     'ngSanitize',
     'ngRoute',
-    'ui-Bootstrap'
+    'ui-Bootstrap',
     'ngDay2App.directive'
   ])
   .config(function ($routeProvider) {
