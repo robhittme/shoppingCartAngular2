@@ -15,8 +15,8 @@
     <div class="customerShoppingCart">
      <ul class="cartItems" ng-repeat="product in products">
         <li><img ng-src="{{product.image}}"></li>
-        <li>name:{{product.name}}</li>
-        <li>price:{{product.price | currency}}</li>
+        <li><h4>name:{{product.name}}</h4></li>
+        <li><h4>price:{{product.price | currency}}</h4></li>
         <ul class="nav nav-pills pull right">
         <li><button class= "btn btn- default" ng-click="show">Pictures</button></li>
         
