@@ -17,13 +17,15 @@
         <li><img ng-src="{{product.image}}"></li>
         <li>name:{{product.name}}</li>
         <li>price:{{product.price | currency}}</li>
-        <li><button ng-click="show">Pictures</button></li>
+        <ul class="nav nav-pills pull right">
+        <li><button class= "btn btn- default" ng-click="show">Pictures</button></li>
         
-        <li><button ng-click="show">description</button></li>
+        <li><button class= "btn btn-default" ng-click="show">description</button></li>
         <div ng-controller="CartCtrl">
           <span class="btn btn-danger glyphicon glyphicon-trash" ng-click="deleteItem()"></span>
           <button class= "btn btn-primary" ng-click="updateProduct">Change Quantity</button>
         </div>
+      </ul>
       </ul>
     </div>
 
