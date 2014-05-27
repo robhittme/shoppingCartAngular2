@@ -51,7 +51,7 @@ angular.module('ngDay2App')
 
     $scope.updateProduct = function() {
       PostService.updateProduct($scope.product);
-      $location.path('/Home/' + $routeParams.id);
+      $location.path('/Admin/' + $routeParams.id);
     };
     // editing
     // deleting
@@ -61,8 +61,7 @@ angular.module('ngDay2App')
 
   .controller('CartCtrl', function($scope, $routeParams, $location, AddToCartService, CartService) {
 
-    $scope.products = AddToCartService.getAllCartItems();
-    $scope.addProductToCart = function(product) {
+      $scope.addProductToCart = function(product) {
         AddToCartService.createNewCartItem(product);
         $location.path('/Cart');
       };

@@ -15,12 +15,17 @@
       <ul class="cartItems" ng-repeat="product in products">
         <li><img ng-src="{{product.image}}"></li>
         <li>name:{{product.name}}</li>
-        <li>description:{{product.description}}</li>
         <li>price:{{product.price | currency}}</li>
+        <tabset justified="true">
+          <tab heading="Description">{{product.description}}</tab>
+          <tab heading="Reviews">Reviews</tab>
+          <tab heading="Pictures">Pictures</tab>
+        </tabset>
+
         <li>quantity:
           <input type="text" ng-model= "newProduct.quantity"><button ng-click="addQuantity(newProduct.quantity)">quantity</button></li>
           <div ng-controller="CartCtrl">
-        <li><button ng-click="addProductToCart(product)">Add to Cart</button></li>
-        </div>
+            <li><button ng-click="addProductToCart(product)">Add to Cart</button></li>
+          j</div>
       </ul>
     </div>
