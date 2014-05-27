@@ -40,6 +40,10 @@ angular
         templateUrl: 'views/Admin.html',
         controller: 'ProductsCtrl'
       })
+      .when('/Cart/{{product._id}}/edit', {
+        templateUrl: 'views/cart-editDetail.html',
+        controller: 'ShoppingCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
