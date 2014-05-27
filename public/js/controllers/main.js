@@ -59,12 +59,14 @@ angular.module('ngDay2App')
 
   })
 
-  .controller('CartCtrl', function($scope, $location, AddToCartService) {
+  .controller('CartCtrl', function($scope, $routeParams, $location, AddToCartService, CartService) {
 
     $scope.products = AddToCartService.getAllCartItems();
     $scope.addProductToCart = function(product) {
         AddToCartService.createNewCartItem(product);
       };
-
+    $scope.deleteItem= function() {
+      CartService.deleteCartItem({id: $routeParams.id });
+    }
   });
 
