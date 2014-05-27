@@ -25,7 +25,7 @@ angular.module('ngDay2App')
   	};
 
   })
-  .controller('ProductsCtrl', ['$scope', '$location', 'AddService', function($scope, $location, AddService) {
+  .controller('ProductsCtrl', function($scope, $location, AddService) {
 
     $scope.products = AddService.getAllProducts();
     $scope.addProduct = function() {
@@ -42,7 +42,7 @@ angular.module('ngDay2App')
 
   }])
 
-  .controller('UDCtrl', ['$scope', '$routeParams', '$location', 'PostService', function($scope, $routeParams, $location, PostService) {
+  .controller('UDCtrl', function($scope, $routeParams, $location, PostService) {
     
     $scope.product = PostService.showProduct({ id: $routeParams.id });
     $scope.delete = function() {
@@ -59,10 +59,10 @@ angular.module('ngDay2App')
 
   }])
 
-  .controller('CartCtrl', ['$scope', '$location', 'AddToCartService', function($scope, $location, AddToCartService) {
+  .controller('CartCtrl', function($scope, $location, AddToCartService) {
 
     $scope.addProductToCart = function(product) {
-        AddToCartService.createNewCartItem(product);
+        AddToCartService.createNewCartItem(newProduct);
       };
 
   }]);
