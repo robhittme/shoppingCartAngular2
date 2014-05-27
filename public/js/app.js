@@ -34,7 +34,7 @@ angular
       })
       .when('/Shop', {
         templateUrl: 'views/products.html',
-        controller:'CartCtrl'
+        controller:'ProductsCtrl'
       })
       .when('/Admin', {
         templateUrl: 'views/Admin.html',
