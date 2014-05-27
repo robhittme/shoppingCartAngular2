@@ -1,4 +1,4 @@
-<div ng-controller= "CartCtrl"></div>
+<div ng-controller= "ProductsCtrl"></div>
   <div class="header">
   <ul class="nav nav-pills pull-right">
     <li><a ng-href="#">Home</a></li>
@@ -19,6 +19,8 @@
         <li>price:{{product.price | currency}}</li>
         <li>quantity:
           <input type="text" ng-model= "newProduct.quantity"><button ng-click="addQuantity(newProduct.quantity)">quantity</button></li>
+          <div ng-controller="CartCtrl">
         <li><button ng-click="addProductToCart(product)">Add to Cart</button></li>
+        </div>
       </ul>
     </div>
