@@ -65,5 +65,5 @@ angular.module('ngDay2App')
         AddToCartService.createNewCartItem(product);
       };
 
-  }])
+  }]);
 
