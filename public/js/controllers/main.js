@@ -61,6 +61,7 @@ angular.module('ngDay2App')
 
   .controller('CartCtrl', function($scope, $location, AddToCartService) {
 
+    $scope.products = AddToCartService.getAllCartItems();
     $scope.addProductToCart = function(product) {
         AddToCartService.createNewCartItem(newProduct);
       };

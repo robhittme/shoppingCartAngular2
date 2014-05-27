@@ -30,11 +30,11 @@ angular
       })
       .when('/Cart', {
         templateUrl: 'views/cart.html',
-        controller: 'ProductsCtrl'
+        controller: 'CartCtrl'
       })
       .when('/Shop', {
         templateUrl: 'views/products.html',
-        controller:'ProductsCtrl'
+        controller:'CartCtrl'
       })
       .when('/Admin', {
         templateUrl: 'views/Admin.html',
@@ -42,7 +42,7 @@ angular
       })
       .when('/Cart/{{product._id}}/edit', {
         templateUrl: 'views/cart-editDetail.html',
-        controller: 'ShoppingCtrl'
+        controller: 'UDCtrl'
       })
       .otherwise({
         redirectTo: '/'
