@@ -64,6 +64,7 @@ angular.module('ngDay2App')
     $scope.products = AddToCartService.getAllCartItems();
     $scope.addProductToCart = function(product) {
         AddToCartService.createNewCartItem(product);
+        $location.path('/Cart');
       };
     $scope.deleteItem= function() {
       CartService.deleteCartItem({id: $routeParams.id });
