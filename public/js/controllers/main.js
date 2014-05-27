@@ -40,7 +40,7 @@ angular.module('ngDay2App')
     //     $scope.Products.push(product);
     //   };
 
-  }])
+  })
 
   .controller('UDCtrl', function($scope, $routeParams, $location, PostService) {
     
@@ -57,7 +57,7 @@ angular.module('ngDay2App')
     // deleting
     // showing
 
-  }])
+  })
 
   .controller('CartCtrl', function($scope, $location, AddToCartService) {
 
@@ -65,5 +65,5 @@ angular.module('ngDay2App')
         AddToCartService.createNewCartItem(newProduct);
       };
 
-  }]);
+  });
 
