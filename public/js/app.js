@@ -5,7 +5,8 @@ angular
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute'
+    'ngRoute',
+    'ngDay2App.directive'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -43,6 +44,9 @@ angular
       .when('/Cart/{{product._id}}/edit', {
         templateUrl: 'views/cart-editDetail.html',
         controller: 'UDCtrl'
+      })
+      .when('/tabs', {
+        templateUrl: 'views/tabs.html',
       })
       .otherwise({
         redirectTo: '/'
